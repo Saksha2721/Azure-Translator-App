@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Translator App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="main-box">
+
+    <h2>NAME OF THE WEBSITE</h2>
+
+    <div class="top-inputs">
+        <div>
+            <label>KEY</label><br>
+            <input type="password" id="apiKey" placeholder="ENTER KEY">
+        </div>
+
+        <div>
+            <label>region</label><br>
+            <input type="text" id="region" placeholder="ENTER region">
+        </div>
+    </div>
+
+    <div class="middle-section">
+        <textarea id="inputText" placeholder="Enter text"></textarea>
+    </div>
+
+    <div class="bottom-section">
+        <select id="targetLang">
+            <option value="hi">Hindi</option>
+            <option value="en">English</option>
+            <option value="fr">French</option>
+            <option value="es">Spanish</option>
+        </select>
+
+        <button onclick="translateText()">translate</button>
+    </div>
+
+    <div id="output"></div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
