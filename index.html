@@ -2,32 +2,90 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Translator App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Translator</title>
+
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Extra styling for better UI */
+        .main-box {
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            width: 600px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        input, textarea, select {
+            width: 90%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 10px;
+            border: none;
+            outline: none;
+            font-size: 14px;
+        }
+
+        textarea {
+            height: 120px;
+            resize: none;
+        }
+
+        button {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(45deg, #ff6a88, #ff99ac);
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        #output {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.4);
+            min-height: 50px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
 </head>
+
 <body>
 
-<div class="main-box">
+    <div class="main-box">
+        <h1>🌐 AI Translator</h1>
 
-    <h2>NAME OF THE WEBSITE</h2>
+        <!-- API Key -->
+        <input type="text" id="key" placeholder="Enter Azure API Key">
 
-    <div class="top-inputs">
-        <div>
-            <label>KEY</label><br>
-            <input type="password" id="apiKey" placeholder="ENTER KEY">
-        </div>
+        <!-- Region -->
+        <input type="text" id="region" placeholder="Enter Region (e.g. eastus)">
 
-        <div>
-            <label>region</label><br>
-            <input type="text" id="region" placeholder="ENTER region">
-        </div>
-    </div>
+        <!-- Input Text -->
+        <textarea id="inputText" placeholder="Enter text to translate..."></textarea>
 
-    <div class="middle-section">
-        <textarea id="inputText" placeholder="Enter text"></textarea>
-    </div>
-
-    <div class="bottom-section">
+        <!-- Language -->
         <select id="targetLang">
             <option value="hi">Hindi</option>
             <option value="en">English</option>
@@ -35,13 +93,16 @@
             <option value="es">Spanish</option>
         </select>
 
-        <button onclick="translateText()">translate</button>
+        <br><br>
+
+        <!-- Button -->
+        <button onclick="translateText()">Translate</button>
+
+        <!-- Output -->
+        <div id="output">Translated text will appear here...</div>
     </div>
 
-    <div id="output"></div>
+    <script src="script.js"></script>
 
-</div>
-
-<script src="script.js"></script>
 </body>
 </html>
